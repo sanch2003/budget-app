@@ -7,6 +7,8 @@ const budgetValue = document.querySelector(".budget-value");
 const submitExpense = document.querySelector(".submit-expense");
 const addExpenseTitle = document.querySelector(".add-expense-title");
 const addExpenseValue = document.querySelector(".add-expense-value");
+const expenseTitle = document.querySelector(".expense-title-list");
+const expenseValue = document.querySelector(".expense-value-list");
 
 class Budget {
   expenses = [
@@ -54,6 +56,22 @@ class UI {
     displayAmount.textContent = totalBudget;
     expensesAmount.textContent = totalExpenses;
     balanceAmount.textContent = totalBudget - totalExpenses;
+
+    expensesList.forEach((item) => {
+      expenseTitle.insertAdjacentHTML(
+        "beforeend",
+        `
+      <li>${item.title}</li>
+      `
+      );
+
+      expenseValue.insertAdjacentHTML(
+        "beforeend",
+        `
+      <li>${item.amount}</li>
+      `
+      );
+    });
   }
 }
 
