@@ -1,0 +1,8 @@
+main {
+  font-family: system-ui;
+}
+
+h1 {
+  font-weight: 500;
+  text-transform: uppercase;
+}
