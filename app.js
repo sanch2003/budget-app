@@ -54,9 +54,11 @@ class UI {
       return total + current.amount;
     }, 0);
     displayAmount.textContent = totalBudget;
-    expensesAmount.textContent = totalExpenses;
+    expensesAmount.textContent = parseInt(totalExpenses, 10);
     balanceAmount.textContent = totalBudget - totalExpenses;
 
+    expenseTitle.innerHTML = "";
+    expenseValue.innerHTML = "";
     expensesList.forEach((item) => {
       expenseTitle.insertAdjacentHTML(
         "beforeend",
@@ -91,9 +93,13 @@ function init() {
 
   submitExpense.addEventListener("click", () => {
     if (addExpenseTitle.value && addExpenseValue.value) {
-      budget.createExpense(addExpenseTitle.value, addExpenseValue.value);
+      budget.createExpense(
+        addExpenseTitle.value,
+        parseInt(addExpenseValue.value, 10)
+      );
     }
     console.log(budget.getExpenses());
+    ui.displayData(budget);
   });
 }
 
