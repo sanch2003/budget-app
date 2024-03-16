@@ -16,29 +16,54 @@
           <!-- Enter budget -->
           <div class="budget">
             <p>Please Enter Your Budget</p>
-            <input type="number" />
-            <button>Calculate</button>
+            <input type="number" class="budget-value" />
+            <button class="add-budget">Calculate</button>
           </div>
           <!-- End of Enter Budget -->
           <!-- Enter expense -->
           <div class="expense">
             <p>Please Enter Your Expense</p>
-            <input type="text" />
+            <input type="text" class="add-expense-title" />
             <p>Please Enter Your Expense Amount</p>
-            <input type="text" />
-            <button>Add Expense</button>
+            <input type="number" class="add-expense-value" />
+            <button class="submit-expense">Add Expense</button>
           </div>
           <!-- End of Enter expense -->
         </div>
         <div class="output">
           <!-- Show totals -->
-          <div class="totals"></div>
+          <div class="totals">
+            <div class="budget-output">
+              <h2>budget</h2>
+              <img src="/images/dollar-note.png" alt="dollar note" />
+              <p>$ <span class="budget-amount">0</span></p>
+            </div>
+            <div class="expenses-output">
+              <h2>expenses</h2>
+              <img src="/images/card.png" alt="card" />
+              <p>$ <span class="expenses-amount">0</span></p>
+            </div>
+            <div class="balance-output">
+              <h2>balance</h2>
+              <img src="/images/dollar-sign.png" alt="dollar sign" />
+              <p>$ <span class="balance-amount">0</span></p>
+            </div>
+          </div>
           <!-- End of show totals -->
           <!-- Expense list -->
-          <div class="list"></div>
+          <div class="list">
+            <div class="expense-title-output">
+              <p>Expense title</p>
+              <ul class="expense-title-list"></ul>
+            </div>
+            <div class="expense-value-output">
+              <ul class="expense-value-list"></ul>
+            </div>
+          </div>
           <!-- End of expense list -->
         </div>
       </div>
     </main>
+    <script src="app.js"></script>
   </body>
 </html>
